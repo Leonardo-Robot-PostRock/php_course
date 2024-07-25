@@ -1,4 +1,2 @@
-<?php 
- echo "Hello student"
- 
-?>
+<?php
+echo "Hello student";
