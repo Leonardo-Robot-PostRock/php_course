@@ -11,9 +11,10 @@
     <?php
 
     $counter = 0;
-    while ($counter < 10) {
-        echo "hell";
-        $counter = $coutner + 1;
+    while ($counter <= 10) {
+        echo $counter . ' ';
+        $counter ++;
+        // $counter = $counter + 1;
     }
     ?>
 </body>
