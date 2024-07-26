@@ -7,7 +7,14 @@
 </head>
 <body>
     <?php
-    $numbe;
+    $name='Leonardo';
+    $number=124;
+    $Nu_mber;
+    //Best practices
+    $Number_List = 100.5;
+    $NUMBER = 100;
+    $name = "<h1>HELLO</h1>";
+    echo $name . " " . $NUMBER;
     ?>
 </body>
 </html>
