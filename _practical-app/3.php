@@ -18,10 +18,10 @@
 
 
 
-	Step 2: Make a forloop  that displays 10 numbers
+			Step 2: Make a forloop  that displays 10 numbers
 
 
-	Step 3 : Make a switch Statement that test againts one condition with 5 cases
+			Step 3 : Make a switch Statement that test againts one condition with 5 cases
 
  */
 
