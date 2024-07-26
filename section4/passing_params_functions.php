@@ -19,13 +19,13 @@
     ?>
 
     <?php
-    function calculate($number1, $number2)
+    function addNumbers($number1, $number2)
     {
         $sum = $number1 + $number2;
         echo $sum;
     }
 
-    calculate(1212, 5319);
+    addNumbers(1212, 5319);
 
     ?>
 </body>
