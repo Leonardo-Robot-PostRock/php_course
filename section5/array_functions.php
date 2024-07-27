@@ -9,6 +9,7 @@
 
 <body>
     <?php
+    // https://www.php.net/manual/en/book.array.php
     $list = [231, 124, 543, 776, 223, 145, 347, 975];
 
     echo max($list);
