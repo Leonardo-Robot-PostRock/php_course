@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Strings functions</title>
 </head>
 
 <body>
     <?php
+    // https://www.php.net/manual/en/ref.strings.php
     $strings = "Hello students do you like the class";
 
     echo strlen($strings);
