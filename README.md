@@ -71,7 +71,7 @@ const MAX_USERS = 100;
 echo MAX_USERS;  // Outputs 100
 ```
 
-**`define()`**: Constants declared with define() are always in the global namespace.
+- **`define()`**: Constants declared with define() are always in the global namespace.
 
 ```php
 namespace MyNamespace;
