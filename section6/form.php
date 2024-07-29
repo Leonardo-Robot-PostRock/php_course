@@ -1,6 +1,15 @@
 <?php
+
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    echo "Hello " . $username . '<br>';
+    echo "This is your password" . $password;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = htmlspecialchars($_POST['username']);
+    $username = $_POST['username'];
     echo $username;
 }
 
