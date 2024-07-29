@@ -1,6 +1,7 @@
 <?php
-if (isset($_POST['submit'])) {
-    echo "yes it works";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = htmlspecialchars($_POST['username']);
+    echo $username;
 }
 
 ?>
@@ -22,4 +23,5 @@ if (isset($_POST['submit'])) {
         <input type="submit" name="submit">
     </form>
 </body>
+
 </html>
