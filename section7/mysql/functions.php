@@ -19,7 +19,20 @@ function createUser()
     }
 }
 
-function showData()
+
+function getAllData()
+{
+    global $connection;
+    $query = "SELECT * FROM users";
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die('Query FAILED: ' . mysqli_error($connection));
+    }
+    return $result;
+}
+
+function getAllUsersById()
 {
     global $connection;
     $query = "SELECT * FROM users";
