@@ -1,3 +1,19 @@
+<?php
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+
+    $connection = mysqli_connect('localhost', 'root', '', 'loginapp', 3307);
+
+    if ($connection) {
+        echo "We are connected";
+    } else {
+        die("Database connection failed");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
