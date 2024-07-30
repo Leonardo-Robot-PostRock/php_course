@@ -1,5 +1,26 @@
-<?php include "db.php";?>
-<?php include "functions.php";?>
+<?php include "db.php"; ?>
+<?php include "functions.php"; ?>
+
+<?php
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $id = isset($_POST['id']) ? $_POST['id'] : '';
+
+    if ($id) {
+        $query = "UPDATE users SET ";
+        $query .= "username = '$username', ";
+        $query .= "password = '$password' ";
+        $query .= "WHERE id = $id ";
+
+        $result = mysqli_query($connection, $query);
+
+        if (!$result) {
+            die("QUERY FAILED" . mysqli_error($connection));
+        }
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,21 +33,22 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="col-xs-6">
-            <form action="login_update.php" method="post">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="col-5 col-xs-6 h-auto">
+            <div id="alert-placeholder"></div>
+            <form id="update-form" action="login_update.php" method="post">
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label class="mb-2" for="username">Username</label>
                     <input type="text" name="username" class="form-control">
 
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label class="my-2" for="password">Password</label>
                     <input type="password" name="password" class="form-control">
                 </div>
                 <div class="form-group">
-                    <select name="id" id="">
-
+                    <select class="form-select mt-2" name="id" id="id" aria-label="Select an ID">
+                        <option value="" selected disabled>Select and ID to update an user</option>
                         <?php
                         showData();
                         ?>
@@ -36,6 +58,34 @@
             </form>
         </div>
     </div>
+
+    <script>
+        const alertPlaceholder = document.getElementById('alert-placeholder');
+
+        const appendAlert = (message, type) => {
+            const wrapper = document.createElement('div');
+            wrapper.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('');
+
+            alertPlaceholder.append(wrapper);
+        };
+
+        document.getElementById('update-form').addEventListener('submit', function(event) {
+            const id = document.getElementById('id').value;
+
+            if (id === '') {
+                event.preventDefault();
+                appendAlert('Por favor seleccione un ID para actualizar usuario', 'warning');
+            } else {
+                alertPlaceholder.innerHTML = '';
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
