@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="col-5 col-xs-6 h-auto">
             <div id="alert-placeholder"></div>
+            <h1 class="text-center">Delete user</h1>
             <form id="update-form" action="login_delete.php" method="post">
                 <div class="form-group">
                     <label class="mb-2" for="username">Username</label>
