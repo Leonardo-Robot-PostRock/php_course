@@ -41,8 +41,6 @@ function updateUser()
 function deleteUser()
 {
     global $connection;
-    $username = $_POST['username'];
-    $password = $_POST['password'];
     $id = isset($_POST['id']) ? $_POST['id'] : '';
 
     if ($id) {

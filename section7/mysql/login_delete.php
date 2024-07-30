@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="form-group">
                     <select class="form-select mt-2" name="id" id="id" aria-label="Select an ID">
-                        <option value="" selected disabled>Select and ID to update an user</option>
+                        <option value="" selected disabled>Select and ID to delete an user</option>
                         <?php
                         showData();
                         ?>
@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
 
             if (id === '') {
                 event.preventDefault();
-                appendAlert('Por favor seleccione un ID para actualizar usuario', 'warning');
+                appendAlert('Por favor seleccione un ID para eliminar usuario', 'warning');
             } else {
                 alertPlaceholder.innerHTML = '';
             }

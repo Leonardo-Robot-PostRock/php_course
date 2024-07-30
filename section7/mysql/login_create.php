@@ -30,12 +30,12 @@ if (isset($_POST['submit'])) {
         <div class="col-5 col-xs-6 h-auto">
             <form action="login_create.php" method="post">
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label class="mb-2" for="username">Username</label>
                     <input type="text" name="username" class="form-control">
 
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label class="my-2" for="password">Password</label>
                     <input type="password" name="password" class="form-control">
                 </div>
                 <input type="submit" name="submit" value="SUBMIT" class="btn btn-primary mt-2">
