@@ -1,24 +1,27 @@
 <?php include "functions.php"; ?>
-<?php include "includes/header.php";?>
-    
+<?php include "includes/header.php"; ?>
+<?php 
+	
+?>
 
-	<section class="content">
 
-		<aside class="col-xs-4">
+<section class="content">
 
-		<?php Navigation();?>
-			
-			
-		</aside><!--SIDEBAR-->
+	<aside class="col-xs-4">
+
+		<?php Navigation(); ?>
+
+
+	</aside><!--SIDEBAR-->
 
 
 	<article class="main-content col-xs-8">
-	
-	
-	
-	<?php  
 
-	/*  Step 1 - Create a database in PHPmyadmin
+
+
+		<?php
+
+		/*  Step 1 - Create a database in PHPmyadmin
 
 		Step 2 - Create a table like the one from the lecture
 
@@ -27,13 +30,24 @@
 		Step 4 - Connect to Database and read data
 
 */
-	
-	?>
+
+		?>
+
+		<form action="7.php" method="post">
+			<div class="form-group">
+				<label for="fusername"></label>
+				<input type="text" name="fusername" required placeholder="Ingrese nombre de usuario" />
+			</div>
+			<div class="form-group">
+				<label for="fpassword"></label>
+				<input type="password" name="fpassword" required placeholder="Ingrese password" />
+			</div>
+			<input type="submit" name="submit" value="SEND" class="btn btn-primary"/>
+		</form>
 
 
 
 
+	</article><!--MAIN CONTENT-->
 
-</article><!--MAIN CONTENT-->
-
-<?php include "includes/footer.php"; ?>
+	<?php include "includes/footer.php"; ?>
