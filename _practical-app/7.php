@@ -1,7 +1,7 @@
 <?php include "functions.php"; ?>
 <?php include "includes/header.php"; ?>
 <?php 
-	
+
 ?>
 
 
@@ -35,12 +35,12 @@
 
 		<form action="7.php" method="post">
 			<div class="form-group">
-				<label for="fusername"></label>
-				<input type="text" name="fusername" required placeholder="Ingrese nombre de usuario" />
+				<label for="fusername">Ingresar nombre de usuario</label>
+				<input type="text" name="fusername" class="form-control" required placeholder="Example: Loper0123" />
 			</div>
 			<div class="form-group">
-				<label for="fpassword"></label>
-				<input type="password" name="fpassword" required placeholder="Ingrese password" />
+				<label for="fpassword">Ingrese password</label>
+				<input type="password" name="fpassword" class="form-control" required placeholder="*******" />
 			</div>
 			<input type="submit" name="submit" value="SEND" class="btn btn-primary"/>
 		</form>
