@@ -1,6 +1,6 @@
 <?php include "functions.php"; ?>
 <?php include "includes/header.php"; ?>
-<?php 
+<?php
 
 ?>
 
@@ -30,6 +30,13 @@
 		Step 4 - Connect to Database and read data
 
 */
+		$connection = mysqli_connect('localhost', 'root', '', 'section7php', 3307);
+
+		if(!$connection){
+			die('Database connection failed');
+		}
+
+		
 
 		?>
 
@@ -42,7 +49,7 @@
 				<label for="fpassword">Ingrese password</label>
 				<input type="password" name="fpassword" class="form-control" required placeholder="*******" />
 			</div>
-			<input type="submit" name="submit" value="SEND" class="btn btn-primary"/>
+			<input type="submit" name="submit" value="SEND" class="btn btn-primary" />
 		</form>
 
 
