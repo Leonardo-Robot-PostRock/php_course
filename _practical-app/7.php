@@ -32,13 +32,58 @@
 */
 		$connection = mysqli_connect('localhost', 'root', '', 'section7php', 3307);
 
-		if(!$connection){
+		if (!$connection) {
 			die('Database connection failed');
 		}
 
-		
-
 		?>
+
+		<?php
+		function createUser()
+		{
+			global $connection;
+			$fusername = $_POST['fusername'];
+			$fpassword = $_POST['fpassword'];
+
+			$query = "INSERT INTO users(username,password) ";
+			$query .= "VALUES ('$fusername','$fpassword')";
+
+			$result = mysqli_query($connection, $query);
+
+			if (!$result) {
+				die('Query FAILED: ' . mysqli_error($connection));
+			} else {
+				echo "<div class='alert alert-success'>Record created</div>";
+			}
+		}
+		?>
+
+		<?php
+		if (isset($_POST['submit'])) {
+			createUser();
+		}
+		?>
+
+		<?php
+		function readData()
+		{
+			global $connection;
+			$query = "SELECT * FROM users";
+			$result = mysqli_query($connection, $query);
+
+			if (!$result) {
+				die('Query FAILED: ' . mysqli_error($connection));
+			}
+
+			return $result;
+		}
+		?>
+
+		<?php
+		$result = readData();
+		?>
+
+		<!-- FORM -->
 
 		<form action="7.php" method="post">
 			<div class="form-group">
@@ -52,8 +97,33 @@
 			<input type="submit" name="submit" value="SEND" class="btn btn-primary" />
 		</form>
 
+		<!-- READ DATA -->
 
-
+		<div class="table-responsive">
+			<h1 class="text-center">Users table</h1>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Username</th>
+						<th scope="col">Password</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					while ($row = mysqli_fetch_assoc($result)) {
+					?>
+						<tr>
+							<th scope="row"><?php echo htmlspecialchars($row['id']); ?></th>
+							<td><?php echo htmlspecialchars($row['username']); ?></td>
+							<td><?php echo htmlspecialchars($row['password']); ?></td>
+						</tr>
+					<?php
+					}
+					?>
+				</tbody>
+			</table>
+		</div>
 
 	</article><!--MAIN CONTENT-->
 
