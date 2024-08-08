@@ -26,6 +26,18 @@
 		Step 4 - echo the variable
 
 	*/
+
+	$password = 'godisanastronaut';
+
+	$hash ='$2y$10$';
+
+	$salt = 'iamarealoneinthisworld';
+
+	$hash_and_salt = $hash . $salt;
+
+	$password = crypt($password, $hash_and_salt);
+
+	echo 'Password encrypted: ' . $password;
 	
 	?>
 
